@@ -17,6 +17,7 @@ footer bgc #2F303A
   --hero-button-accent: #188ce8;
   --svg-fill-color: #afb1b8;
   --bgc-footer-link-color: rgba(255, 255, 255, 0.1);
+  --bgc-above-img: rgba(47, 48, 58, 0.8);
 }
 
 body {
@@ -124,6 +125,22 @@ p {
 
 .contacts {
   margin-left: auto;
+}
+
+.link.current {
+  position: relative;
+}
+
+.link.current::after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 .site-nav .link:hover,
@@ -235,7 +252,27 @@ p {
 }
 
 .tasks .list-item {
+  position: relative;
   max-width: calc((100% - 60px) / 3);
+}
+
+.tasks .subtext {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgc-above-img);
+}
+
+.tasks .text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+  color: var(--contrast-color);
 }
 
 .tasks .list-item:not(:last-child) {
